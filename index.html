@@ -1,98 +1,195 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>Tenant Background Check | Whitebridge Screening</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick Credit Verification</title>
+
 <style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f4f7fb;
-    color: #1c2530;
-    overflow: hidden;
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  header h2 {
-    margin: 0;
-    font-weight: 600;
-    color: #2d3a4b;
-    font-size: 22px;
-  }
-  .hero h1 {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 20px 0 10px;
-  }
-  .hero p {
-    font-size: 16px;
-    color: #4e5c6b;
-    margin: 0 0 20px;
-  }
-  .benefits {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .benefit {
-    font-size: 14px;
-    color: #1d2a38;
-  }
-  .cta a {
-    background: #006aff;
-    color: #fff;
-    padding: 14px 28px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    display: inline-block;
-  }
-  .cta a:hover {
-    background: #0052cc;
-  }
-  footer {
-    font-size: 12px;
-    color: #6b7785;
-  }
+:root{
+  --primary:#1a73e8;      
+  --primary-dark:#1558b0;
+  --accent:#0cc0a0;       
+  --bg:#f5f7fa;           
+  --text:#1a1a1a;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+}
+
+body{
+  margin:0;
+  font-family:Inter, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  text-align:center;
+}
+
+header{ padding:35px 0 15px; }
+.logo{
+  font-size:2rem; font-weight:700; letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  -webkit-background-clip:text; color:transparent;
+}
+
+.card{
+  max-width:720px; margin:0 auto; padding:35px 25px;
+  border-radius:14px; background:var(--card);
+  border:1px solid var(--border);
+  box-shadow:0 4px 25px rgba(0,0,0,0.06);
+}
+
+.lead{
+  color:var(--muted); font-size:1rem;
+  margin-bottom:20px; transition:.4s;
+}
+.lead.ok{
+  font-size:1.3rem; font-weight:600;
+  color:var(--primary-dark);
+}
+
+.meter{
+  background:#eaf1ff;
+  border-left:4px solid var(--primary);
+  padding:12px 16px; border-radius:8px;
+  font-weight:500; margin:18px auto 25px;
+}
+
+ul{ padding:0; list-style:none; margin:0; }
+li{
+  background:#f0f4ff;
+  border-left:4px solid var(--accent);
+  padding:12px 14px; border-radius:8px;
+  margin-bottom:10px; text-align:left;
+  color:#1a1a1a;
+}
+
+.cta{
+  display:inline-block; margin-top:20px;
+  padding:14px 28px;
+  background:linear-gradient(90deg,var(--primary),var(--primary-dark));
+  text-decoration:none; color:#fff;
+  font-weight:600; border-radius:10px;
+  font-size:1.05rem;
+  transition:.25s;
+}
+.cta:hover{
+  transform:translateY(-3px);
+  background:linear-gradient(90deg,var(--primary-dark),var(--primary));
+}
+
+.trust{ margin-top:18px; font-size:.85rem; color:var(--muted); }
+
+.reviews{ margin-top:40px; }
+.reviews h2{
+  font-size:1.3rem;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+#review-box{
+  padding:20px; background:#f8faff;
+  border-radius:12px; min-height:120px;
+  transition:.4s;
+  border:1px solid var(--border);
+}
+.fade{ opacity:0; transform:translateY(8px); }
+
+.stars{ color:#e0a800; margin-bottom:6px; }
+.name{ color:var(--muted); font-size:.9rem; }
+
+footer{
+  margin:40px 0 20px;
+  font-size:.8rem; color:var(--muted);
+}
 </style>
 </head>
+
 <body>
-<div class="container">
-  <header>
-    <h2>Whitebridge Tenant Screening</h2>
-  </header>
 
-  <div class="hero">
-    <h1>Complete Your Background Check</h1>
-    <p>Securely complete your screening to finalize your rental application.</p>
+<header>
+  <div class="logo">Quick Credit Verification</div>
+</header>
+
+<div class="card">
+
+  <p id="geo" class="lead">Checking your eligibility...</p>
+
+  <div class="meter">🟢 No Minimum Credit Required</div>
+
+  <ul>
+    <li>📊 Good income can help qualify</li>
+    <li>⚡ Fast & secure verification</li>
+    <li>🌐 A valid report from here will help to qualify</li>
+    <li>💳 Stable income can help eliminate old evictions or bad credit</li>
+  </ul>
+
+  <a class="cta" href="https://afflat3a2.com/trk/lnk/BC873D0C-00DD-4E9B-8DEF-1E3F9A990FD2/?o=24933&c=918277&a=712815&k=7A1DF23FCB26932E1504627918574318&l=26023&s1=SH-N-SAS-Peter" target="_blank" rel="noopener sponsored">
+     ➜ Start Credit Check
+  </a>
+
+  <div class="trust">🔒 SSL Secured • 🌐 Independent • ⚡ Fast Results</div>
+
+  <div class="reviews">
+    <h2>Recent Feedback</h2>
+    <div id="review-box">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>Loading reviews...</p>
+      <div class="name">— User</div>
+    </div>
   </div>
-
-  <div class="benefits">
-    <div class="benefit">✔ Identity Verification</div>
-    <div class="benefit">✔ Credit Insights</div>
-    <div class="benefit">✔ Criminal & Eviction History</div>
-  </div>
-
-  <div class="cta">
-    <a href="#">Start Background Check</a>
-  </div>
-
-  <footer>
-    © 2025 Whitebridge Screening
-  </footer>
 </div>
+
+<footer>© 2025 Quick Credit Verification</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const geoEl = document.getElementById("geo");
+
+  fetch("https://ipapi.co/json/")
+    .then(res => res.json())
+    .then(data => {
+      const city = data.city || "";
+      const region = data.region || "";
+      const country = data.country_name || "";
+
+      geoEl.innerHTML = `🎉 You are eligible from <strong>${city}, ${region}, ${country}</strong>`;
+      geoEl.classList.add("ok");
+    })
+    .catch(() => {
+      geoEl.innerHTML = "🎉 You are eligible from your location!";
+      geoEl.classList.add("ok");
+    });
+});
+
+const reviews=[
+ {s:"⭐⭐⭐⭐⭐",t:"Professional and reliable.",n:"— Amanda"},
+ {s:"⭐⭐⭐⭐⭐",t:"Results delivered instantly.",n:"— Jason"},
+ {s:"⭐⭐⭐⭐⭐",t:"Very easy to use.",n:"— Rachel"},
+ {s:"⭐⭐⭐⭐⭐",t:"Clean business layout.",n:"— Kevin"},
+ {s:"⭐⭐⭐⭐",t:"I'm satisfied!",n:"— David"},
+ {s:"⭐⭐⭐⭐",t:"Accurate and trustworthy service.",n:"— Priya"}
+];
+
+reviews.sort(()=>Math.random()-0.5);
+
+let idx=0;
+const box=document.getElementById("review-box");
+
+function showReview(){
+  const r=reviews[idx];
+  box.classList.add("fade");
+  setTimeout(()=>{
+    box.innerHTML=`<div class="stars">${r.s}</div><p>${r.t}</p><div class="name">${r.n}</div>`;
+    box.classList.remove("fade");
+  },350);
+  idx=(idx+1)%reviews.length;
+}
+
+setInterval(showReview,3500);
+showReview();
+</script>
+
 </body>
 </html>
