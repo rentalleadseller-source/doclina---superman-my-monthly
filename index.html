@@ -1,195 +1,213 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quick Credit Verification</title>
+<title>Rental & Public Record Review</title>
 
 <style>
 :root{
-  --primary:#1a73e8;      
-  --primary-dark:#1558b0;
-  --accent:#0cc0a0;       
-  --bg:#f5f7fa;           
-  --text:#1a1a1a;
-  --card:#ffffff;
-  --muted:#6b7280;
-  --border:#e5e7eb;
+  --bg:#0f172a;
+  --card:#111827;
+  --primary:#22d3ee;
+  --accent:#6366f1;
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --border:#1f2937;
+  --success:#10b981;
 }
 
 body{
   margin:0;
   font-family:Inter, sans-serif;
-  background:var(--bg);
+  background:linear-gradient(135deg,#0f172a,#111827);
   color:var(--text);
+}
+
+.wrapper{
+  max-width:950px;
+  margin:60px auto;
+  padding:20px;
+}
+
+.header{
   text-align:center;
+  margin-bottom:40px;
 }
 
-header{ padding:35px 0 15px; }
 .logo{
-  font-size:2rem; font-weight:700; letter-spacing:.5px;
-  background:linear-gradient(90deg,var(--primary),var(--accent));
-  -webkit-background-clip:text; color:transparent;
-}
-
-.card{
-  max-width:720px; margin:0 auto; padding:35px 25px;
-  border-radius:14px; background:var(--card);
-  border:1px solid var(--border);
-  box-shadow:0 4px 25px rgba(0,0,0,0.06);
-}
-
-.lead{
-  color:var(--muted); font-size:1rem;
-  margin-bottom:20px; transition:.4s;
-}
-.lead.ok{
-  font-size:1.3rem; font-weight:600;
-  color:var(--primary-dark);
-}
-
-.meter{
-  background:#eaf1ff;
-  border-left:4px solid var(--primary);
-  padding:12px 16px; border-radius:8px;
-  font-weight:500; margin:18px auto 25px;
-}
-
-ul{ padding:0; list-style:none; margin:0; }
-li{
-  background:#f0f4ff;
-  border-left:4px solid var(--accent);
-  padding:12px 14px; border-radius:8px;
-  margin-bottom:10px; text-align:left;
-  color:#1a1a1a;
-}
-
-.cta{
-  display:inline-block; margin-top:20px;
-  padding:14px 28px;
-  background:linear-gradient(90deg,var(--primary),var(--primary-dark));
-  text-decoration:none; color:#fff;
-  font-weight:600; border-radius:10px;
-  font-size:1.05rem;
-  transition:.25s;
-}
-.cta:hover{
-  transform:translateY(-3px);
-  background:linear-gradient(90deg,var(--primary-dark),var(--primary));
-}
-
-.trust{ margin-top:18px; font-size:.85rem; color:var(--muted); }
-
-.reviews{ margin-top:40px; }
-.reviews h2{
-  font-size:1.3rem;
+  font-size:2rem;
+  font-weight:700;
   background:linear-gradient(90deg,var(--primary),var(--accent));
   -webkit-background-clip:text;
   color:transparent;
 }
 
-#review-box{
-  padding:20px; background:#f8faff;
-  border-radius:12px; min-height:120px;
-  transition:.4s;
+.sub{
+  color:var(--muted);
+  margin-top:10px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:40px 30px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+.progress{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:30px;
+}
+
+.step{
+  flex:1;
+  text-align:center;
+  font-size:.85rem;
+  position:relative;
+}
+
+.step::before{
+  content:"";
+  display:block;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  margin:0 auto 8px;
+  background:var(--success);
+}
+
+.step:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  top:13px;
+  right:-50%;
+  width:100%;
+  height:2px;
+  background:var(--success);
+  z-index:-1;
+}
+
+.section{
+  margin-bottom:25px;
+  padding:20px;
+  background:#0b1220;
+  border-radius:12px;
   border:1px solid var(--border);
 }
-.fade{ opacity:0; transform:translateY(8px); }
 
-.stars{ color:#e0a800; margin-bottom:6px; }
-.name{ color:var(--muted); font-size:.9rem; }
+.section h3{
+  margin:0 0 10px;
+  color:var(--primary);
+}
+
+.section p{
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.highlight{
+  background:rgba(16,185,129,.1);
+  border:1px solid rgba(16,185,129,.4);
+  padding:14px;
+  border-radius:10px;
+  margin-top:20px;
+  font-size:.95rem;
+}
+
+.cta{
+  display:block;
+  margin:30px auto 10px;
+  max-width:320px;
+  text-align:center;
+  padding:15px;
+  background:linear-gradient(90deg,var(--accent),var(--primary));
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  border-radius:12px;
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:translateY(-3px);
+  opacity:.9;
+}
+
+.trust{
+  text-align:center;
+  font-size:.8rem;
+  color:var(--muted);
+  margin-top:15px;
+}
 
 footer{
-  margin:40px 0 20px;
-  font-size:.8rem; color:var(--muted);
+  text-align:center;
+  margin-top:50px;
+  font-size:.75rem;
+  color:var(--muted);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Quick Credit Verification</div>
-</header>
+<div class="wrapper">
 
-<div class="card">
-
-  <p id="geo" class="lead">Checking your eligibility...</p>
-
-  <div class="meter">🟢 No Minimum Credit Required</div>
-
-  <ul>
-    <li>📊 Good income can help qualify</li>
-    <li>⚡ Fast & secure verification</li>
-    <li>🌐 A valid report from here will help to qualify</li>
-    <li>💳 Stable income can help eliminate old evictions or bad credit</li>
-  </ul>
-
-  <a class="cta" href="https://afflat3a2.com/trk/lnk/BC873D0C-00DD-4E9B-8DEF-1E3F9A990FD2/?o=24933&c=918277&a=712815&k=7A1DF23FCB26932E1504627918574318&l=26023&s1=SH-N-SAS-Peter" target="_blank" rel="noopener sponsored">
-     ➜ Start Credit Check
-  </a>
-
-  <div class="trust">🔒 SSL Secured • 🌐 Independent • ⚡ Fast Results</div>
-
-  <div class="reviews">
-    <h2>Recent Feedback</h2>
-    <div id="review-box">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>Loading reviews...</p>
-      <div class="name">— User</div>
-    </div>
+  <div class="header">
+    <div class="logo">Rental History & Public Record Review</div>
+    <div class="sub">Secure Tenant Background Insights</div>
   </div>
+
+  <div class="card">
+
+    <div class="progress">
+      <div class="step">Identity Verified</div>
+      <div class="step">Rental History</div>
+      <div class="step">Public Records</div>
+      <div class="step">Final Summary</div>
+    </div>
+
+    <div class="section">
+      <h3>Rental History Check</h3>
+      <p>Review prior lease records, payment consistency, landlord reporting, and stability indicators that may affect approval decisions.</p>
+    </div>
+
+    <div class="section">
+      <h3>Eviction & Filing Records</h3>
+      <p>Search available court filings, eviction notices, and housing-related public case records where applicable.</p>
+    </div>
+
+    <div class="section">
+      <h3>Public Record Summary</h3>
+      <p>Identify reportable civil records or public filings that may be considered during tenant screening processes.</p>
+    </div>
+
+    <div class="highlight">
+      ✔ No minimum credit score required  
+      ✔ Secure encrypted processing  
+      ✔ Instant digital access to results  
+    </div>
+
+    <a class="cta" href="#" target="_blank" rel="noopener">
+      Start Rental & Record Review
+    </a>
+
+    <div class="trust">
+      🔒 SSL Secured • 🏛 Public Data Sources • ⚡ Fast Processing
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Rental History Review Services. All rights reserved.
+  </footer>
+
 </div>
-
-<footer>© 2025 Quick Credit Verification</footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const geoEl = document.getElementById("geo");
-
-  fetch("https://ipapi.co/json/")
-    .then(res => res.json())
-    .then(data => {
-      const city = data.city || "";
-      const region = data.region || "";
-      const country = data.country_name || "";
-
-      geoEl.innerHTML = `🎉 You are eligible from <strong>${city}, ${region}, ${country}</strong>`;
-      geoEl.classList.add("ok");
-    })
-    .catch(() => {
-      geoEl.innerHTML = "🎉 You are eligible from your location!";
-      geoEl.classList.add("ok");
-    });
-});
-
-const reviews=[
- {s:"⭐⭐⭐⭐⭐",t:"Professional and reliable.",n:"— Amanda"},
- {s:"⭐⭐⭐⭐⭐",t:"Results delivered instantly.",n:"— Jason"},
- {s:"⭐⭐⭐⭐⭐",t:"Very easy to use.",n:"— Rachel"},
- {s:"⭐⭐⭐⭐⭐",t:"Clean business layout.",n:"— Kevin"},
- {s:"⭐⭐⭐⭐",t:"I'm satisfied!",n:"— David"},
- {s:"⭐⭐⭐⭐",t:"Accurate and trustworthy service.",n:"— Priya"}
-];
-
-reviews.sort(()=>Math.random()-0.5);
-
-let idx=0;
-const box=document.getElementById("review-box");
-
-function showReview(){
-  const r=reviews[idx];
-  box.classList.add("fade");
-  setTimeout(()=>{
-    box.innerHTML=`<div class="stars">${r.s}</div><p>${r.t}</p><div class="name">${r.n}</div>`;
-    box.classList.remove("fade");
-  },350);
-  idx=(idx+1)%reviews.length;
-}
-
-setInterval(showReview,3500);
-showReview();
-</script>
 
 </body>
 </html>
